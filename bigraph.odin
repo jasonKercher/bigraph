@@ -57,7 +57,7 @@ destroy :: proc(graph: ^Graph($T)) {
 }
 
 consume :: proc(dest: ^Graph($T), src: ^Graph(T)) {
-	append(&dest.nodes, src.nodes)
+	append(&dest.nodes, ..src.nodes[:])
 	clear(&src.nodes)
 }
 
