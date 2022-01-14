@@ -73,7 +73,7 @@ add_data :: proc(graph: ^Graph($T), val: T) -> ^Node(T) {
 
 add :: proc {add_data, add_node}
 
-remove :: proc(graph: ^Graph($T), node: ^Node(T)) {
+remove :: proc(graph: ^Graph($T), node: ^Node(T)) -> T {
 	remove_idx: int
 
 	for n, i in graph.nodes {
