@@ -64,21 +64,21 @@ test_graph :: proc(t: ^testing.T) {
 	node1.out[1] = node4
 	node4.out[0] = node1
 
-	///* 1 and 4 still root */
-	//reset(&graph)
+	/* 1 and 4 still root */
+	reset(&graph)
 
-	//res = traverse(&graph)
-	//testing.expect_value(t, res.data, 1)
-	//res = traverse(&graph)
-	//testing.expect_value(t, res.data, 2)
-	//res = traverse(&graph)
-	//testing.expect_value(t, res.data, 4)
-	//res = traverse(&graph)
-	//testing.expect_value(t, res.data, 3)
-	//res = traverse(&graph)
-	//testing.expect_value(t, res.data, 5)
-	//res = traverse(&graph)
-	//testing.expect_value(t, res, nil)
+	res = traverse(&graph)
+	testing.expect_value(t, res.data, 1)
+	res = traverse(&graph)
+	testing.expect_value(t, res.data, 2)
+	res = traverse(&graph)
+	testing.expect_value(t, res.data, 4)
+	res = traverse(&graph)
+	testing.expect_value(t, res.data, 3)
+	res = traverse(&graph)
+	testing.expect_value(t, res.data, 5)
+	res = traverse(&graph)
+	testing.expect_value(t, res, nil)
 
 	/* Now, only 5 will be root */
 	derive_roots(&graph)
